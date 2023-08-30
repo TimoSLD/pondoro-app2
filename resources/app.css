@@ -1,0 +1,63 @@
+body {
+  background-color: #9E1B32;
+  font-family: "Roboto", sans-serif;
+}
+
+#timer-element {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 800px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+#timer-display {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Equal to the width to make it round */
+  text-align: center;
+  font-size: 24px; /* Adjust font size as needed */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#timer-display {
+  font-family: "roboto", sans-serif;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+}
+
+#button-container {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.custom-button {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 8px 16px;
+  Border-radius: 0.325rem;
+  Box-shadow: 0 0 12px 0 #959595;
+}
+
+/*# sourceMappingURL=app.css.map */

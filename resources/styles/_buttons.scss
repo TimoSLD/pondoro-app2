@@ -1,0 +1,18 @@
+#button-container {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.custom-button {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 8px 16px;
+  Border-radius: .325rem;
+  Box-shadow: 0 0 12px 0 #959595
+}
