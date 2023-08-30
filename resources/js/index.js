@@ -15,6 +15,14 @@ let alertElement = document.createElement("div");
 alertElement.id = "alert";
 document.body.appendChild(alertElement);
 
+let alertTitle = document.createElement("h2"); // Create a title element
+alertTitle.textContent = "Time is up!"; // Set the title text
+alertElement.appendChild(alertTitle); // Append the title to the alert
+
+let alertText = document.createElement("p"); // Create a paragraph element
+alertText.textContent = "Take a break and relax."; // Set the paragraph text
+alertElement.appendChild(alertText); // Append the paragraph to the alert
+
 let buttonInfo = [
     { text: "Start", action: startButtonAction },
     { text: "Restart", action: restartButtonAction },
@@ -48,7 +56,7 @@ let breakCounter = 0;
 let breakTime = 5;
 let breakInterval;
 let inBreak = false;
-let isPaused = false; // New button state variable
+let isPaused = false;
 
 let breakCounterElement = document.createElement("p");
 breakCounterElement.textContent = "Break counter: " + breakCounter;
@@ -57,19 +65,18 @@ timerElement.appendChild(breakCounterElement);
 function startButtonAction() {
     if (!timerInterval && !isPaused) {
         timerInterval = setInterval(updateTimerDisplay, 1000, startButton);
-        startButton.textContent = "Pause"; // Change button label to "Pause"
+        startButton.textContent = "Pause";
     } else if (timerInterval && !isPaused) {
         clearInterval(timerInterval);
         timerInterval = null;
         isPaused = true;
-        startButton.textContent = "Resume"; // Change button label to "Resume"
+        startButton.textContent = "Resume";
     } else if (!timerInterval && isPaused) {
         timerInterval = setInterval(updateTimerDisplay, 1000, startButton);
         isPaused = false;
-        startButton.textContent = "Pause"; // Change button label back to "Pause"
+        startButton.textContent = "Pause";
     }
 }
-
 
 function updateTimerDisplay() {
     if (totalSeconds <= 0) {
@@ -82,16 +89,17 @@ function updateTimerDisplay() {
             breakTime = 10;
         }
         breakCounterElement.textContent = "Break counter: " + breakCounter;
-        // Inside updateTimerDisplay function, instead of alert("work time is over.")
-        alertElement.textContent = "Work time is over.";
+
+        alertTitle.textContent = "Time is up!";
+        alertText.textContent = "Take a break and relax.";
+
         alertElement.style.display = "block";
         setTimeout(() => {
             alertElement.style.display = "none";
-        }, 3000); // Hide after 3 seconds
+        }, 3000);
 
         inBreak = true;
         breakInterval = setInterval(updateBreakTimer, 1000, startButton);
-    // } else if (!timerInterval && inBreak) {
     } else {
         totalSeconds = totalSeconds -= 1;
         let minutes = Math.floor(totalSeconds / 60);

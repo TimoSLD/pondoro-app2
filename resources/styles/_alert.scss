@@ -1,23 +1,25 @@
 #alert {
   display: none;
   position: fixed;
-  width: 100px;
-  height: 100px;
-  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
   color: black;
-  padding: 10px 20px;
   border-radius: 5px;
   text-align: center;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
   animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+  align-items: flex-start;
 }
 
 @keyframes slideIn {
   from {
-    transform: translateX(-50%) translateY(-100%);
+    transform: translate(-50%, -60%);
   }
   to {
-    transform: translateX(-50%) translateY(0);
+    transform: translate(-50%, -50%);
   }
 }
 
