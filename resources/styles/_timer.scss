@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-#timer-element {
+.timer {
   background-color: rgba(255, 255, 255, .6);
   width: 800px;
   height: 500px;
@@ -12,33 +12,32 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
+
+  &__display {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Equal to the width to make it round */
+    text-align: center;
+    font-size: 100px; /* Adjust font size as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-#timer-display {
-  background-color: black;
-  color: white;
-  border-radius: 50%;
-  width: 300px; /* Adjust width as needed */
-  height: 300px; /* Equal to the width to make it round */
-  text-align: center;
-  font-size: 100px; /* Adjust font size as needed */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// Responsive styles
 @media (max-width: 768px) {
-  #timer-element {
+  .timer {
     width: 90%; /* Adjust width for smaller screens */
     max-width: 600px; /* Set a maximum width for smaller screens */
   }
 
-  #timer-display {
+  .display {
     width: 55%; /* Adjust width for smaller screens */
     height: 50vw; /* Set height relative to width for responsiveness */
     font-size: 100px; /* Adjust font size for smaller screens */
@@ -46,7 +45,7 @@ body {
 }
 
 @media (max-width: 760px) {
-  #timer-display {
+  .display {
     width: 65%; /* Adjust width for screens around 760px wide */
     max-width: 400px; /* Gradually reduce max-width as screen width increases */
     height: 65vw; /* Set height relative to width for responsiveness */
@@ -55,12 +54,12 @@ body {
 }
 
 @media (max-width: 480px) {
-  #timer-element {
+  .timer{
     width: 80%; /* Adjust width for even smaller screens */
     max-width: 400px; /* Set a maximum width for even smaller screens */
   }
 
-  #timer-display {
+  .display {
     width: 70%; /* Adjust width for even smaller screens */
     height: 70vw; /* Set height relative to width for responsiveness */
     font-size: 100px; /* Adjust font size for even smaller screens */

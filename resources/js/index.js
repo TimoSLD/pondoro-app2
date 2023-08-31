@@ -1,18 +1,18 @@
 const timerElement = document.createElement("div");
-timerElement.id = "timer-element";
+timerElement.classList.add("timer");
 document.body.appendChild(timerElement);
 
 const timerDisplay = document.createElement("div");
-timerDisplay.id = "timer-display";
+timerDisplay.classList.add("timer__display");
 timerDisplay.textContent = "00:02"; // Initial timer display
 timerElement.appendChild(timerDisplay);
 
 const buttonContainer = document.createElement("div");
-buttonContainer.id = "button-container";
+buttonContainer.classList.add("button-container");
 document.body.appendChild(buttonContainer);
 
 const alertElement = document.createElement("div");
-alertElement.id = "alert";
+alertElement.classList.add("alert");
 document.body.appendChild(alertElement);
 
 const alertTitle = document.createElement("h2");
@@ -36,7 +36,7 @@ let restartButton;
 for (let i = 0; i < buttonInfo.length; i++) {
     let button = document.createElement("button");
     button.textContent = buttonInfo[i].text;
-    button.classList.add("custom-button");
+    button.classList.add("button-container__button");
 
     button.onclick = buttonInfo[i].action;
 
