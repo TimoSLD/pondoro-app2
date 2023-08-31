@@ -1,3 +1,49 @@
+@media only screen and (max-width: 1024px) {
+  .timer {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .timer__display {
+    width: 320px;
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .timer {
+    width: 80%;
+    background-color: blue;
+  }
+  .timer__display {
+    width: 300px;
+    height: 300px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .timer {
+    background-color: yellow;
+    width: 60%;
+    height: 50%;
+  }
+  .timer__display {
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 3px;
+  }
+  .alert {
+    width: 50%;
+  }
+}
 body {
   background-color: #9E1B32;
   font-family: "Roboto", sans-serif;
@@ -30,34 +76,50 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .timer {
-    width: 90%; /* Adjust width for smaller screens */
-    max-width: 600px; /* Set a maximum width for smaller screens */
+    background-color: rgba(255, 255, 255, 0.6);
   }
-  .display {
-    width: 55%; /* Adjust width for smaller screens */
-    height: 50vw; /* Set height relative to width for responsiveness */
-    font-size: 100px; /* Adjust font size for smaller screens */
+  .timer__display {
+    width: 320px;
+    height: 320px;
   }
 }
-@media (max-width: 760px) {
-  .display {
-    width: 65%; /* Adjust width for screens around 760px wide */
-    max-width: 400px; /* Gradually reduce max-width as screen width increases */
-    height: 65vw; /* Set height relative to width for responsiveness */
-    font-size: 100px; /* Adjust font size for screens around 760px wide */
+@media only screen and (max-width: 768px) {
+  .timer {
+    width: 80%;
+    background-color: blue;
+  }
+  .timer__display {
+    width: 300px;
+    height: 300px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 12px;
   }
 }
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .timer {
-    width: 80%; /* Adjust width for even smaller screens */
-    max-width: 400px; /* Set a maximum width for even smaller screens */
+    background-color: yellow;
+    width: 60%;
+    height: 50%;
   }
-  .display {
-    width: 70%; /* Adjust width for even smaller screens */
-    height: 70vw; /* Set height relative to width for responsiveness */
-    font-size: 100px; /* Adjust font size for even smaller screens */
+  .timer__display {
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 3px;
+  }
+  .alert {
+    width: 50%;
   }
 }
 .button-container {
@@ -98,6 +160,52 @@ body {
     padding: 4px 10px; /* Adjust padding for even smaller screens */
   }
 }
+@media only screen and (max-width: 1024px) {
+  .timer {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .timer__display {
+    width: 320px;
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .timer {
+    width: 80%;
+    background-color: blue;
+  }
+  .timer__display {
+    width: 300px;
+    height: 300px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .timer {
+    background-color: yellow;
+    width: 60%;
+    height: 50%;
+  }
+  .timer__display {
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 3px;
+  }
+  .alert {
+    width: 50%;
+  }
+}
 .alert {
   display: none;
   position: fixed;
@@ -130,18 +238,50 @@ body {
     opacity: 0;
   }
 }
-@media (max-width: 768px) {
-  #alert {
-    width: 90%; /* Adjust the width for smaller screens */
-    padding: 10px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Adjust font size for smaller screens */
+@media only screen and (max-width: 1024px) {
+  .timer {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .timer__display {
+    width: 320px;
+    height: 320px;
   }
 }
-@media (max-width: 480px) {
-  #alert {
-    width: 80%; /* Adjust the width for even smaller screens */
-    padding: 8px; /* Adjust padding for even smaller screens */
-    font-size: 12px; /* Adjust font size for even smaller screens */
+@media only screen and (max-width: 768px) {
+  .timer {
+    width: 80%;
+    background-color: blue;
+  }
+  .timer__display {
+    width: 300px;
+    height: 300px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .timer {
+    background-color: yellow;
+    width: 60%;
+    height: 50%;
+  }
+  .timer__display {
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button-container__button {
+    font-size: 3px;
+  }
+  .alert {
+    width: 50%;
   }
 }
 

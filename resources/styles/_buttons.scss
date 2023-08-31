@@ -1,4 +1,7 @@
+@import "responsive";
+
 .button-container {
+
   position: absolute;
   top: 66%;
   left: 50%;
@@ -8,6 +11,7 @@
   gap: 20px;
 
   &__button {
+
     background-color: black;
     color: white;
     font-size: 18px;
