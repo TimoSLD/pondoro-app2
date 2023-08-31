@@ -1,25 +1,25 @@
-let timerElement = document.createElement("div");
+const timerElement = document.createElement("div");
 timerElement.id = "timer-element";
 document.body.appendChild(timerElement);
 
-let timerDisplay = document.createElement("div");
+const timerDisplay = document.createElement("div");
 timerDisplay.id = "timer-display";
 timerDisplay.textContent = "00:02"; // Initial timer display
 timerElement.appendChild(timerDisplay);
 
-let buttonContainer = document.createElement("div");
+const buttonContainer = document.createElement("div");
 buttonContainer.id = "button-container";
 document.body.appendChild(buttonContainer);
 
-let alertElement = document.createElement("div");
+const alertElement = document.createElement("div");
 alertElement.id = "alert";
 document.body.appendChild(alertElement);
 
-let alertTitle = document.createElement("h2");
+const alertTitle = document.createElement("h2");
 alertTitle.textContent = "Time is up!";
 alertElement.appendChild(alertTitle);
 
-let alertText = document.createElement("p");
+const alertText = document.createElement("p");
 alertText.textContent = "Take a break and relax.";
 alertElement.appendChild(alertText);
 
@@ -82,16 +82,14 @@ function updateTimerDisplay() {
     if (totalSeconds <= 0) {
         clearInterval(timerInterval);
         timerInterval = null;
-        totalSeconds = 2;
-        timerDisplay.textContent = "00:02";
+        totalSeconds = 25 * 60;
         breakCounter = breakCounter += 1;
         if (breakCounter > 3) {
-            breakTime = 30 * 60;
+            breakTime = 10 * 60;
         }
         breakCounterElement.textContent = "Break counter: " + breakCounter;
 
-        alertTitle.textContent = "Time is up!";
-        alertText.textContent = "Take a break and relax.";
+        currentBreakTime();
 
         alertElement.style.display = "block";
         setTimeout(() => {
@@ -113,17 +111,13 @@ function updateBreakTimer() {
     if (breakTime <= 0) {
         clearInterval(breakInterval);
         breakInterval = null;
-        breakTime = 5;
+        breakTime = 5 * 60;
         inBreak = false;
         startButton.disabled = false
         startButton.textContent = "Start";
     } else {
         breakTime = breakTime -= 1;
-        let minutes = Math.floor(breakTime / 60);
-        let seconds = breakTime % 60;
-        let formattedBreakTime;
-        formattedBreakTime = `${padNumber(minutes)}:${padNumber(seconds)}`;
-        startButton.textContent = formattedBreakTime;
+        currentBreakTime();
         currentTime();
     }
 }
@@ -159,6 +153,16 @@ function currentTime() {
     currentTimeRemaining = formattedTime;
     document.title = `Pomodoro App - ${currentTimeRemaining}`;
     timerDisplay.textContent = formattedTime;
+}
+
+function currentBreakTime() {
+    let minutes = Math.floor(breakTime / 60);
+    let seconds = breakTime % 60;
+    let formattedBreakTime;
+    formattedBreakTime = `${padNumber(minutes)}:${padNumber(seconds)}`;
+    startButton.textContent = formattedBreakTime;
+    alertTitle.textContent = "Time is up!";
+    alertText.textContent = "Take a break and start again after: " + formattedBreakTime + " mins";
 }
 
 currentTime();
