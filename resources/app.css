@@ -41,6 +41,36 @@ body {
   font-size: 100px;
 }
 
+@media (max-width: 768px) {
+  #timer-element {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 600px; /* Set a maximum width for smaller screens */
+  }
+  #timer-display {
+    width: 55%; /* Adjust width for smaller screens */
+    height: 50vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for smaller screens */
+  }
+}
+@media (max-width: 760px) {
+  #timer-display {
+    width: 65%; /* Adjust width for screens around 760px wide */
+    max-width: 400px; /* Gradually reduce max-width as screen width increases */
+    height: 65vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for screens around 760px wide */
+  }
+}
+@media (max-width: 480px) {
+  #timer-element {
+    width: 80%; /* Adjust width for even smaller screens */
+    max-width: 400px; /* Set a maximum width for even smaller screens */
+  }
+  #timer-display {
+    width: 70%; /* Adjust width for even smaller screens */
+    height: 70vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for even smaller screens */
+  }
+}
 #button-container {
   position: absolute;
   top: 66%;
@@ -56,10 +86,30 @@ body {
   color: white;
   font-size: 18px;
   padding: 8px 16px;
-  Border-radius: 0.325rem;
-  Box-shadow: 0 0 12px 0 #959595;
+  border-radius: 0.325rem;
+  box-shadow: 0 0 12px 0 #959595;
 }
 
+@media (max-width: 768px) {
+  #button-container {
+    top: 80%; /* Adjust vertical position for smaller screens */
+  }
+  .custom-button {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    padding: 6px 12px; /* Adjust padding for smaller screens */
+  }
+}
+@media (max-width: 480px) {
+  #button-container {
+    top: 85%; /* Adjust vertical position for even smaller screens */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Adjust gap between vertically stacked buttons */
+  }
+  .custom-button {
+    font-size: 14px; /* Adjust font size for even smaller screens */
+    padding: 4px 10px; /* Adjust padding for even smaller screens */
+  }
+}
 #alert {
   display: none;
   position: fixed;
@@ -90,6 +140,20 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  #alert {
+    width: 90%; /* Adjust the width for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+@media (max-width: 480px) {
+  #alert {
+    width: 80%; /* Adjust the width for even smaller screens */
+    padding: 8px; /* Adjust padding for even smaller screens */
+    font-size: 12px; /* Adjust font size for even smaller screens */
   }
 }
 

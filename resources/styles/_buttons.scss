@@ -13,6 +13,31 @@
   color: white;
   font-size: 18px;
   padding: 8px 16px;
-  Border-radius: .325rem;
-  Box-shadow: 0 0 12px 0 #959595
+  border-radius: .325rem;
+  box-shadow: 0 0 12px 0 #959595;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  #button-container {
+    top: 80%; /* Adjust vertical position for smaller screens */
+  }
+
+  .custom-button {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    padding: 6px 12px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #button-container {
+    top: 85%; /* Adjust vertical position for even smaller screens */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Adjust gap between vertically stacked buttons */
+  }
+
+  .custom-button {
+    font-size: 14px; /* Adjust font size for even smaller screens */
+    padding: 4px 10px; /* Adjust padding for even smaller screens */
+  }
 }

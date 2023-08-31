@@ -101,12 +101,17 @@ function updateTimerDisplay() {
         inBreak = true;
         breakInterval = setInterval(updateBreakTimer, 1000, startButton);
     } else {
+        restartButton.disabled = false;
         totalSeconds = totalSeconds -= 1;
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = totalSeconds % 60;
         let formattedTime;
-        formattedTime= `${padNumber(minutes)}:${padNumber(seconds)}`;
+        formattedTime = `${padNumber(minutes)}:${padNumber(seconds)}`;
         timerDisplay.textContent = formattedTime;
+
+        let currentTimeRemaining;
+        currentTimeRemaining = formattedTime;
+        document.title = `Pomodoro App - ${currentTimeRemaining}`;
     }
 }
 
@@ -136,7 +141,9 @@ function padNumber(number) {
 
 function restartButtonAction() {
     clearInterval(timerInterval);
+    timerInterval = null;
     totalSeconds = 0;
+    startButton.textContent = "Start";
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
     let formattedTime;
@@ -146,10 +153,19 @@ function restartButtonAction() {
 
 function addOneMinuteAction() {
     totalSeconds = totalSeconds += 60;
-
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    let formattedTime;
+    formattedTime= `${padNumber(minutes)}:${padNumber(seconds)}`;
+    timerDisplay.textContent = formattedTime;
 }
 
 function addTenMinutesAction() {
     totalSeconds = totalSeconds += 10 * 60;
+    let minutes = Math.floor(totalSeconds / 60);
+    let seconds = totalSeconds % 60;
+    let formattedTime;
+    formattedTime= `${padNumber(minutes)}:${padNumber(seconds)}`;
+    timerDisplay.textContent = formattedTime;
 }
 

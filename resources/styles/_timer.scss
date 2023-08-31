@@ -40,3 +40,39 @@ body {
   transform: translate(-50%, -50%);
   font-size: 100px;
 }
+
+// Responsive styles
+@media (max-width: 768px) {
+  #timer-element {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 600px; /* Set a maximum width for smaller screens */
+  }
+
+  #timer-display {
+    width: 55%; /* Adjust width for smaller screens */
+    height: 50vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 760px) {
+  #timer-display {
+    width: 65%; /* Adjust width for screens around 760px wide */
+    max-width: 400px; /* Gradually reduce max-width as screen width increases */
+    height: 65vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for screens around 760px wide */
+  }
+}
+
+@media (max-width: 480px) {
+  #timer-element {
+    width: 80%; /* Adjust width for even smaller screens */
+    max-width: 400px; /* Set a maximum width for even smaller screens */
+  }
+
+  #timer-display {
+    width: 70%; /* Adjust width for even smaller screens */
+    height: 70vw; /* Set height relative to width for responsiveness */
+    font-size: 100px; /* Adjust font size for even smaller screens */
+  }
+}
