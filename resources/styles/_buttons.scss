@@ -1,48 +1,20 @@
 @import "responsive";
 
 .button-container {
-
   position: absolute;
   top: 66%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.25rem;
 
   &__button {
-
     background-color: black;
     color: white;
-    font-size: 18px;
-    padding: 8px 16px;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
     border-radius: .325rem;
-    box-shadow: 0 0 12px 0 #959595;
-  }
-
-}
-
-// Responsive styles
-@media (max-width: 768px) {
-  #button-container {
-    top: 80%; /* Adjust vertical position for smaller screens */
-  }
-
-  .custom-button {
-    font-size: 16px; /* Adjust font size for smaller screens */
-    padding: 6px 12px; /* Adjust padding for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  #button-container {
-    top: 85%; /* Adjust vertical position for even smaller screens */
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Adjust gap between vertically stacked buttons */
-  }
-
-  .custom-button {
-    font-size: 14px; /* Adjust font size for even smaller screens */
-    padding: 4px 10px; /* Adjust padding for even smaller screens */
+    box-shadow: 0 0 0.75rem 0 #959595;
   }
 }
