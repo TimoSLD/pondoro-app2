@@ -4,22 +4,30 @@ $mobile-screen: 30rem;
 $mobile-screen-small: 20rem;
 
 @media only screen and (max-width: #{$desktop-screen}) {
+
   .timer__display {
     height: 20rem;
     width: 20rem;
   }
 }
 
-@media only screen and (max-width: #{$mobile-screen}) {
-  .alert {
-    width: 50%;
+@media only screen and (max-width: #{$tablet-screen}) {
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 18.75rem;
+    width: 18.75rem;
   }
   .button-container {
     margin-top: 1.25rem;
   }
   .button-container__button {
-    font-size: 0.19rem;
+    font-size: .75rem;
   }
+}
+
+@media only screen and (max-width: #{$mobile-screen}) {
   .timer {
     height: 50%;
     width: 60%;
@@ -29,20 +37,18 @@ $mobile-screen-small: 20rem;
     height: 12.5rem;
     width: 12.5rem;
   }
+  .button-container {
+    margin-top: 1.25rem;
+  }
+  .button-container__button {
+    font-size: .19rem;
+  }
+  .alert {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: #{$mobile-screen-small}) {
-  .alert {
-    width: 30%;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
   .timer {
     height: 70%;
     width: 60%;
@@ -51,21 +57,16 @@ $mobile-screen-small: 20rem;
     height: 10rem;
     width: 10rem;
   }
-}
-
-@media only screen and (max-width: #{$tablet-screen}) {
   .button-container {
-    margin-top: 1.25rem;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0.25rem 1rem;
   }
   .button-container__button {
-    font-size: 0.75rem;
+    font-size: .75rem;
   }
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
+  .alert {
+    width: 30%;
   }
 }
 
