@@ -1,33 +1,12 @@
 @media only screen and (max-width: 64rem) {
   .timer__display {
-    width: 20rem;
     height: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    width: 18.75rem;
-    height: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
+    width: 20rem;
   }
 }
 @media only screen and (max-width: 30rem) {
-  .timer {
-    width: 60%;
-    height: 50%;
-  }
-  .timer__display {
-    width: 12.5rem;
-    height: 12.5rem;
-    font-size: 4rem;
+  .alert {
+    width: 50%;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -35,29 +14,50 @@
   .button-container__button {
     font-size: 0.19rem;
   }
-  .alert {
-    width: 50%;
+  .timer {
+    height: 50%;
+    width: 60%;
+  }
+  .timer__display {
+    font-size: 4rem;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 }
 @media only screen and (max-width: 20rem) {
-  .timer {
-    width: 60%;
-    height: 70%;
-  }
-  .timer__display {
-    width: 10rem;
-    height: 10rem;
+  .alert {
+    width: 30%;
   }
   .button-container {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     margin: 0 0.25rem 1rem;
   }
   .button-container__button {
     font-size: 0.75rem;
   }
-  .alert {
-    width: 30%;
+  .timer {
+    height: 70%;
+    width: 60%;
+  }
+  .timer__display {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  .button-container {
+    margin-top: 1.25rem;
+  }
+  .button-container__button {
+    font-size: 0.75rem;
+  }
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 18.75rem;
+    width: 18.75rem;
   }
 }
 body {
@@ -67,61 +67,43 @@ body {
 
 .timer {
   background-color: rgba(255, 255, 255, 0.6);
-  width: 50rem;
-  height: 31.35rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0.625rem;
-}
-.timer__display {
-  background-color: black;
-  color: white;
   border-radius: 50%;
-  width: 18.75rem;
-  height: 18.75rem;
-  text-align: center;
-  font-size: 6.25rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 31.35rem;
+  left: 50%;
+  padding: 0.625rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+}
+.timer__display {
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6.25rem;
+  height: 18.75rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18.75rem;
 }
 
 @media only screen and (max-width: 64rem) {
   .timer__display {
-    width: 20rem;
     height: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    width: 18.75rem;
-    height: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
+    width: 20rem;
   }
 }
 @media only screen and (max-width: 30rem) {
-  .timer {
-    width: 60%;
-    height: 50%;
-  }
-  .timer__display {
-    width: 12.5rem;
-    height: 12.5rem;
-    font-size: 4rem;
+  .alert {
+    width: 50%;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -129,83 +111,88 @@ body {
   .button-container__button {
     font-size: 0.19rem;
   }
-  .alert {
-    width: 50%;
+  .timer {
+    height: 50%;
+    width: 60%;
+  }
+  .timer__display {
+    font-size: 4rem;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 }
 @media only screen and (max-width: 20rem) {
-  .timer {
-    width: 60%;
-    height: 70%;
-  }
-  .timer__display {
-    width: 10rem;
-    height: 10rem;
+  .alert {
+    width: 30%;
   }
   .button-container {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     margin: 0 0.25rem 1rem;
   }
   .button-container__button {
     font-size: 0.75rem;
   }
-  .alert {
-    width: 30%;
+  .timer {
+    height: 70%;
+    width: 60%;
+  }
+  .timer__display {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  .button-container {
+    margin-top: 1.25rem;
+  }
+  .button-container__button {
+    font-size: 0.75rem;
+  }
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 18.75rem;
+    width: 18.75rem;
   }
 }
 .button-container {
-  position: absolute;
-  top: 66%;
-  left: 50%;
-  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 0.325rem;
+  box-shadow: 0 0 0.75rem #959595;
   display: flex;
   flex-direction: row;
   gap: 1.25rem;
+  left: 50%;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 66%;
+  transform: translateX(-50%);
 }
+
 .button-container__button {
   background-color: black;
+  border-radius: 0.325rem;
+  box-shadow: 0 0 0.75rem #959595;
   color: white;
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
-  border-radius: 0.325rem;
-  box-shadow: 0 0 0.75rem #959595;
 }
 .button-container__button:hover {
-  transform: translate(0, -0.18px);
   background-color: #333;
+  transform: translate(0, -0.18px);
 }
 
 @media only screen and (max-width: 64rem) {
   .timer__display {
-    width: 20rem;
     height: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    width: 18.75rem;
-    height: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
+    width: 20rem;
   }
 }
 @media only screen and (max-width: 30rem) {
-  .timer {
-    width: 60%;
-    height: 50%;
-  }
-  .timer__display {
-    width: 12.5rem;
-    height: 12.5rem;
-    font-size: 4rem;
+  .alert {
+    width: 50%;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -213,55 +200,68 @@ body {
   .button-container__button {
     font-size: 0.19rem;
   }
-  .alert {
-    width: 50%;
+  .timer {
+    height: 50%;
+    width: 60%;
+  }
+  .timer__display {
+    font-size: 4rem;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 }
 @media only screen and (max-width: 20rem) {
-  .timer {
-    width: 60%;
-    height: 70%;
-  }
-  .timer__display {
-    width: 10rem;
-    height: 10rem;
+  .alert {
+    width: 30%;
   }
   .button-container {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     margin: 0 0.25rem 1rem;
   }
   .button-container__button {
     font-size: 0.75rem;
   }
-  .alert {
-    width: 30%;
+  .timer {
+    height: 70%;
+    width: 60%;
+  }
+  .timer__display {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  .button-container {
+    margin-top: 1.25rem;
+  }
+  .button-container__button {
+    font-size: 0.75rem;
+  }
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 18.75rem;
+    width: 18.75rem;
   }
 }
 .alert {
-  display: none;
-  position: fixed;
-  width: 18.75rem;
-  padding: 1.25rem;
+  align-items: flex-start;
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
   background-color: rgba(255, 255, 255, 0.6);
-  color: black;
   border-radius: 0.3rem;
-  text-align: center;
+  color: black;
+  display: none;
   left: 50%;
+  padding: 1.25rem;
+  position: fixed;
+  text-align: center;
   top: 10%;
   transform: translate(-50%, -50%);
-  animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
-  align-items: flex-start;
+  width: 18.75rem;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translate(-50%, -60%);
-  }
-  to {
-    transform: translate(-50%, -50%);
-  }
-}
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -270,36 +270,23 @@ body {
     opacity: 0;
   }
 }
-@media only screen and (max-width: 64rem) {
-  .timer__display {
-    width: 20rem;
-    height: 20rem;
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -60%);
+  }
+  to {
+    transform: translate(-50%, -50%);
   }
 }
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
+@media only screen and (max-width: 64rem) {
   .timer__display {
-    width: 18.75rem;
-    height: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
+    height: 20rem;
+    width: 20rem;
   }
 }
 @media only screen and (max-width: 30rem) {
-  .timer {
-    width: 60%;
-    height: 50%;
-  }
-  .timer__display {
-    width: 12.5rem;
-    height: 12.5rem;
-    font-size: 4rem;
+  .alert {
+    width: 50%;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -307,29 +294,50 @@ body {
   .button-container__button {
     font-size: 0.19rem;
   }
-  .alert {
-    width: 50%;
+  .timer {
+    height: 50%;
+    width: 60%;
+  }
+  .timer__display {
+    font-size: 4rem;
+    height: 12.5rem;
+    width: 12.5rem;
   }
 }
 @media only screen and (max-width: 20rem) {
-  .timer {
-    width: 60%;
-    height: 70%;
-  }
-  .timer__display {
-    width: 10rem;
-    height: 10rem;
+  .alert {
+    width: 30%;
   }
   .button-container {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     margin: 0 0.25rem 1rem;
   }
   .button-container__button {
     font-size: 0.75rem;
   }
-  .alert {
-    width: 30%;
+  .timer {
+    height: 70%;
+    width: 60%;
+  }
+  .timer__display {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 48rem) {
+  .button-container {
+    margin-top: 1.25rem;
+  }
+  .button-container__button {
+    font-size: 0.75rem;
+  }
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 18.75rem;
+    width: 18.75rem;
   }
 }
 
