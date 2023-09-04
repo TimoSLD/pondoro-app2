@@ -4,7 +4,7 @@ document.body.appendChild(timerElement);
 
 const timerDisplay = document.createElement("div");
 timerDisplay.classList.add("timer__display");
-timerDisplay.textContent = "00:02"; // Initial timer display
+timerDisplay.textContent = "00:02";
 timerElement.appendChild(timerDisplay);
 
 const buttonContainer = document.createElement("div");
@@ -16,10 +16,12 @@ alertElement.classList.add("alert");
 document.body.appendChild(alertElement);
 
 const alertTitle = document.createElement("h2");
+alertTitle.classList.add("alert__title");
 alertTitle.textContent = "Time is up!";
 alertElement.appendChild(alertTitle);
 
 const alertText = document.createElement("p");
+alertText.classList.add("alert__text");
 alertText.textContent = "Take a break and relax.";
 alertElement.appendChild(alertText);
 
@@ -44,7 +46,6 @@ for (let i = 0; i < buttonInfo.length; i++) {
 
     if (buttonInfo[i].text === "Start") {
         startButton = button;
-
     } else if (buttonInfo[i].text === "Restart") {
         restartButton = button;
     }
@@ -58,10 +59,17 @@ let breakInterval;
 let inBreak = false;
 let isPaused = false;
 
-let breakCounterElement = document.createElement("p");
+let breakCounterElement = document.createElement("span");
+breakCounterElement.classList.add("timer__counter");
 breakCounterElement.textContent = "Break counter: " + breakCounter;
 timerElement.appendChild(breakCounterElement);
 
+/**
+ * Handles the "Start/Pause/Resume" button click.
+ * If the timer is not running and not paused, it starts the timer.
+ * If the timer is running and not paused, it pauses the timer.
+ * If the timer is not running and is paused, it resumes the timer.
+ */
 function startButtonAction() {
     if (!timerInterval && !isPaused) {
         timerInterval = setInterval(updateTimerDisplay, 1000, startButton);
@@ -78,6 +86,12 @@ function startButtonAction() {
     }
 }
 
+/**
+ * Updates the timer display.
+ * If the totalSeconds reach 0, it clears the timerInterval, increments the break counter,
+ * updates the break time and display, shows an alert, and starts a break interval.
+ * If the timer is still running, it decreases totalSeconds and updates the current time display.
+ */
 function updateTimerDisplay() {
     if (totalSeconds <= 0) {
         clearInterval(timerInterval);
@@ -107,7 +121,6 @@ function updateTimerDisplay() {
 
 function updateBreakTimer() {
     startButton.disabled = true;
-    restartButton.disabled = true
     if (breakTime <= 0) {
         clearInterval(breakInterval);
         breakInterval = null;
@@ -145,8 +158,8 @@ function addTenMinutesAction() {
 }
 
 function currentTime() {
-    let minutes = Math.floor(totalSeconds / 60);
-    let seconds = totalSeconds % 60;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
     let formattedTime;
     formattedTime= `${padNumber(minutes)}:${padNumber(seconds)}`;
     let currentTimeRemaining;
@@ -156,13 +169,13 @@ function currentTime() {
 }
 
 function currentBreakTime() {
-    let minutes = Math.floor(breakTime / 60);
-    let seconds = breakTime % 60;
+    const minutes = Math.floor(breakTime / 60);
+    const seconds = breakTime % 60;
     let formattedBreakTime;
     formattedBreakTime = `${padNumber(minutes)}:${padNumber(seconds)}`;
     startButton.textContent = formattedBreakTime;
     alertTitle.textContent = "Time is up!";
-    alertText.textContent = "Take a break and start again after: " + formattedBreakTime + " mins";
+    alertText.textContent = "Take a break and start again after: " + `formattedBreakTime` + " mins";
 }
 
 currentTime();

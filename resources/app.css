@@ -27,7 +27,7 @@
   .timer__display {
     width: 12.5rem;
     height: 12.5rem;
-    font-size: 60px;
+    font-size: 4rem;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -68,21 +68,21 @@ body {
 .timer {
   background-color: rgba(255, 255, 255, 0.6);
   width: 50rem;
-  height: 31.25rem;
+  height: 31.35rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0.6rem;
+  padding: 0.625rem;
 }
 .timer__display {
   background-color: black;
   color: white;
   border-radius: 50%;
-  width: 18.75rem; /* Adjust width as needed */
-  height: 18.75rem; /* Equal to the width to make it round */
+  width: 18.75rem;
+  height: 18.75rem;
   text-align: center;
-  font-size: 6.25rem; /* Adjust font size as needed */
+  font-size: 6.25rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -121,7 +121,7 @@ body {
   .timer__display {
     width: 12.5rem;
     height: 12.5rem;
-    font-size: 60px;
+    font-size: 4rem;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -169,7 +169,11 @@ body {
   font-size: 1.1rem;
   padding: 0.5rem 1rem;
   border-radius: 0.325rem;
-  box-shadow: 0 0 0.75rem 0 #959595;
+  box-shadow: 0 0 0.75rem #959595;
+}
+.button-container__button:hover {
+  transform: translate(0, -0.18px);
+  background-color: #333;
 }
 
 @media only screen and (max-width: 64rem) {
@@ -201,7 +205,7 @@ body {
   .timer__display {
     width: 12.5rem;
     height: 12.5rem;
-    font-size: 60px;
+    font-size: 4rem;
   }
   .button-container {
     margin-top: 1.25rem;
@@ -295,7 +299,7 @@ body {
   .timer__display {
     width: 12.5rem;
     height: 12.5rem;
-    font-size: 60px;
+    font-size: 4rem;
   }
   .button-container {
     margin-top: 1.25rem;

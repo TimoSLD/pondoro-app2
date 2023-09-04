@@ -13,8 +13,13 @@
     background-color: black;
     color: white;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border-radius: .325rem;
-    box-shadow: 0 0 0.75rem 0 #959595;
+    box-shadow: 0 0 0.75rem #959595;
+
+    &:hover {
+      transform: translate(0, -.18px);
+      background-color: #333;
+    }
   }
 }
