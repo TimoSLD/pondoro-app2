@@ -132,10 +132,18 @@ function updateTimerDisplay() {
     }
 }
 
-// Function to convert a time in seconds to a formatted "MM:SS" string
+/**
+ * Converts a time in seconds to a formatted string "MM:SS".
+ *
+ * @param {number} timeInSeconds - The time in seconds to convert.
+ * @returns {string} - A formatted time string in "MM:SS" format.
+ */
 function convertTimeToFormattedString(timeInSeconds) {
+    // Calculate minutes and seconds from the total time in seconds
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
+
+    // Format the time as "MM:SS" and return the result
     return `${padNumber(minutes)}:${padNumber(seconds)}`;
 }
 
@@ -219,8 +227,7 @@ function currentTime() {
     const formattedTime = convertTimeToFormattedString(totalSeconds);
 
     // Update the document title with the current time
-    let currentTimeRemaining = formattedTime;
-    document.title = `Pomodoro App - ${currentTimeRemaining}`;
+    document.title = `Pomodoro App - ${formattedTime}`;
 
     // Update the timer display with the formatted time
     timerDisplay.textContent = formattedTime;
@@ -232,7 +239,7 @@ function currentTime() {
  * `convertTimeToFormattedString` function to format the time as "MM:SS".
  */
 function currentBreakTime() {
-    // Use the new function to format the break time as "MM:SS"
+    // To format the break time as "MM:SS"
     const formattedBreakTime = convertTimeToFormattedString(breakTime);
 
     // Update the "Start" button text with the break time
