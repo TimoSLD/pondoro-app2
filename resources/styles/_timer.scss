@@ -1,35 +1,22 @@
-@import "responsive";
-
-body {
-  background-color: #9E1B32;
-  font-family: 'Roboto', sans-serif;
-}
-
 .timer {
+  align-items: center;
   background-color: rgba(255, 255, 255, .6);
+  display: flex;
   height: 31.35rem;
-  left: 50%;
+  justify-content: center;
   padding: .625rem;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 50rem;
-
 
   &__display {
     align-items: center;
-    background-color: black;
+    background-color: #000;
     border-radius: 50%;
-    color: #ffffff;
+    color: #fff;
     display: flex;
     font-size: 6.25rem;
     height: 18.75rem;
     justify-content: center;
-    left: 50%;
-    position: absolute;
     text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 18.75rem;
   }
 }

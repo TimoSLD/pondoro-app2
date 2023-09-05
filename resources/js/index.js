@@ -1,56 +1,41 @@
-// Create timer elements
-const timerElement = document.createElement("div");
-timerElement.classList.add("timer");
-document.body.appendChild(timerElement);
+const pomodoro = document.getElementById('pomodoro-app')
 
-const timerDisplay = document.createElement("div");
-timerDisplay.classList.add("timer__display");
-timerDisplay.textContent = convertTimeToFormattedString(2 * 60);
-timerElement.appendChild(timerDisplay);
+/**
+ * What the function does.
+ *
+ * @param {String} element
+ * @param {Array<String>} elementClasses
+ * @param {HTMLElement} parent
+ * @param {String} content
+ * @param {Function} event
+ *
+ * @returns {HTMLElement}
+ */
+function createElement(element, elementClasses, parent = null, content = null, event = null) {
+    const newElement = document.createElement(element)
 
-const buttonContainer = document.createElement("div");
-buttonContainer.classList.add("button-container");
-document.body.appendChild(buttonContainer);
-
-const alertElement = document.createElement("div");
-alertElement.classList.add("alert");
-document.body.appendChild(alertElement);
-
-const alertTitle = document.createElement("h2");
-alertTitle.classList.add("alert__title");
-alertTitle.textContent = "Time is up!";
-alertElement.appendChild(alertTitle);
-
-const alertText = document.createElement("p");
-alertText.classList.add("alert__text");
-alertText.textContent = "Take a break and relax.";
-alertElement.appendChild(alertText);
-
-let buttonInfo = [
-    { text: "Start", action: startButtonAction },
-    { text: "Restart", action: restartButtonAction },
-    { text: "+1 Minute", action: addOneMinuteAction },
-    { text: "+10 Minutes", action: addTenMinutesAction }
-];
-
-let startButton;
-let restartButton;
-
-for (let i = 0; i < buttonInfo.length; i++) {
-    let button = document.createElement("button");
-    button.textContent = buttonInfo[i].text;
-    button.classList.add("button-container__button");
-
-    button.onclick = buttonInfo[i].action;
-
-    buttonContainer.appendChild(button);
-
-    if (buttonInfo[i].text === "Start") {
-        startButton = button;
-    } else if (buttonInfo[i].text === "Restart") {
-        restartButton = button;
+    for (const elementClass of elementClasses) {
+        newElement.classList.add(elementClass)
     }
+
+    if (content) newElement.innerHTML = content
+
+    if (parent) parent.append(newElement)
+
+    return newElement
 }
+
+const timerElement = createElement('div', ['timer'], pomodoro);
+const timerDisplay = createElement('div', ['timer__display'], timerElement, convertTimeToFormattedString(2 * 60))
+const buttonContainer = createElement('div', ['button-container'], pomodoro);
+const alertElement = createElement('div', ['alert'], pomodoro);
+const alertTitle = createElement('h2', ['alert__title'], alertElement, "Time is up!");
+const alertText = createElement('span', ['alert__text'], alertElement, "Take a break and relax.");
+
+const startButton = createElement('button', ['button-container__button'], buttonContainer, "start", startButtonAction);
+const restartButton = createElement('button', ['button-container__button'], buttonContainer, "restart", restartButtonAction);
+const plusOneMinuteButton = createElement('button', ['button-container__button'], buttonContainer, "+1 minute", addOneMinuteAction);
+const plusTenMinutesButton = createElement('button', ['button-container__button'], buttonContainer, "+1 minute", addTenMinutesAction);
 
 let totalSeconds = 25 * 60;
 let timerInterval;
@@ -60,10 +45,7 @@ let breakInterval;
 let inBreak = false;
 let isPaused = false;
 
-let breakCounterElement = document.createElement("span");
-breakCounterElement.classList.add("timer__counter");
-breakCounterElement.textContent = "Break counter: " + breakCounter;
-timerElement.appendChild(breakCounterElement);
+const breakCounterElement = createElement('span', ['timer__counter'], timerElement, "Break counter: " + breakCounter)
 
 /**
  * Handles the "Start/Pause/Resume" button click.

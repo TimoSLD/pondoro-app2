@@ -1,3 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.pomodoro-app {
+  align-items: center;
+  background-color: #9E1B32;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
 @media only screen and (max-width: 64rem) {
   .timer__display {
     height: 20rem;
@@ -60,100 +79,28 @@
     width: 30%;
   }
 }
-body {
-  background-color: #9E1B32;
-  font-family: "Roboto", sans-serif;
-}
-
 .timer {
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
   height: 31.35rem;
-  left: 50%;
+  justify-content: center;
   padding: 0.625rem;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 50rem;
 }
 .timer__display {
   align-items: center;
-  background-color: black;
+  background-color: #000;
   border-radius: 50%;
-  color: #ffffff;
+  color: #fff;
   display: flex;
   font-size: 6.25rem;
   height: 18.75rem;
   justify-content: center;
-  left: 50%;
-  position: absolute;
   text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 18.75rem;
 }
 
-@media only screen and (max-width: 64rem) {
-  .timer__display {
-    height: 20rem;
-    width: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-}
-@media only screen and (max-width: 30rem) {
-  .timer {
-    height: 50%;
-    width: 60%;
-  }
-  .timer__display {
-    font-size: 4rem;
-    height: 12.5rem;
-    width: 12.5rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.19rem;
-  }
-  .alert {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 20rem) {
-  .timer {
-    height: 70%;
-    width: 60%;
-  }
-  .timer__display {
-    height: 10rem;
-    width: 10rem;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-  .alert {
-    width: 30%;
-  }
-}
 .button-container {
   display: flex;
   flex-direction: row;
@@ -176,68 +123,6 @@ body {
   transform: translate(0, -0.18px);
 }
 
-@media only screen and (max-width: 64rem) {
-  .timer__display {
-    height: 20rem;
-    width: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-}
-@media only screen and (max-width: 30rem) {
-  .timer {
-    height: 50%;
-    width: 60%;
-  }
-  .timer__display {
-    font-size: 4rem;
-    height: 12.5rem;
-    width: 12.5rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.19rem;
-  }
-  .alert {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 20rem) {
-  .timer {
-    height: 70%;
-    width: 60%;
-  }
-  .timer__display {
-    height: 10rem;
-    width: 10rem;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-  .alert {
-    width: 30%;
-  }
-}
 .alert {
   align-items: flex-start;
   animation: fadeOut 0.5s 2.5s forwards, slideIn 0.5s;
@@ -268,68 +153,6 @@ body {
   }
   to {
     opacity: 0;
-  }
-}
-@media only screen and (max-width: 64rem) {
-  .timer__display {
-    height: 20rem;
-    width: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-}
-@media only screen and (max-width: 30rem) {
-  .timer {
-    height: 50%;
-    width: 60%;
-  }
-  .timer__display {
-    font-size: 4rem;
-    height: 12.5rem;
-    width: 12.5rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.19rem;
-  }
-  .alert {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 20rem) {
-  .timer {
-    height: 70%;
-    width: 60%;
-  }
-  .timer__display {
-    height: 10rem;
-    width: 10rem;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-  .alert {
-    width: 30%;
   }
 }
 

@@ -14,6 +14,10 @@ $mobile-screen-small: 20rem;
 @media only screen and (max-width: #{$tablet-screen}) {
   .timer {
     width: 80%;
+
+    &__display {
+
+    }
   }
   .timer__display {
     height: 18.75rem;
