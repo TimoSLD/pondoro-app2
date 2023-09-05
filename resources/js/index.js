@@ -118,9 +118,15 @@ function updateTimerDisplay() {
     }
 }
 
+/**
+ * Displays or hides the alert element based on the value of the 'display' parameter.
+ *
+ * @param {boolean} display - If true, the alert element is displayed; if false, it's hidden.
+ *
+ * @returns {void} - This function does not return a specific value.
+ */
 function displayAlert(display) {
-    console.log('cstatutus change')
-    display ? alertElement.classList.remove('alert--hide') : alertElement.classList.add('alert--hide')
+    display ? alertElement.classList.remove('alert--hide') : alertElement.classList.add('alert--hide');
 }
 
 /**
