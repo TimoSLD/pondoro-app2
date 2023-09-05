@@ -16,10 +16,9 @@ body {
   justify-content: center;
   position: relative;
   width: 100%;
-
-
 }
 
-@import "styles/responsive";
 @import "styles/timer";
 @import "styles/alert";
+@import "styles/responsive";
+

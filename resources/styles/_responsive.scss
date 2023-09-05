@@ -1,73 +1,73 @@
-$desktop-screen: 64rem;
-$tablet-screen: 48rem;
-$mobile-screen: 30rem;
-$mobile-screen-small: 20rem;
-
-@media only screen and (max-width: #{$desktop-screen}) {
-
+@media only screen and (max-width: 1024px) {
   .timer__display {
-    height: 20rem;
-    width: 20rem;
+    height: 18rem;
+    width: 18rem;
   }
 }
 
-@media only screen and (max-width: #{$tablet-screen}) {
+@media only screen and (max-width: 767px) {
   .timer {
     width: 80%;
 
     &__display {
-
+      height: 17rem;
+      width: 17rem;
     }
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: .75rem;
+
+    &__button-container {
+      margin-top: 1.25rem;
+
+      &__button {
+        font-size: .75rem;
+      }
+    }
   }
 }
 
-@media only screen and (max-width: #{$mobile-screen}) {
+@media only screen and (max-width: 480px) {
   .timer {
     height: 50%;
     width: 60%;
-  }
-  .timer__display {
-    font-size: 4rem;
-    height: 12.5rem;
-    width: 12.5rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: .19rem;
+
+    &__display {
+      font-size: 4rem;
+      height: 12.5rem;
+      width: 12.5rem;
+    }
+
+    &__button-container {
+      margin-top: 3.25rem;
+
+      &__button {
+        font-size: .19rem;
+      }
+    }
   }
   .alert {
     width: 50%;
   }
 }
 
-@media only screen and (max-width: #{$mobile-screen-small}) {
+
+@media only screen and (max-width: 320px) {
   .timer {
-    height: 70%;
-    width: 60%;
-  }
-  .timer__display {
-    height: 10rem;
-    width: 10rem;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: .75rem;
+    height: 60%;
+    width: 50%;
+
+    &__display {
+      height: 8rem;
+      width: 8rem;
+      font-size: 3rem;
+    }
+
+    &__button-container {
+      align-items: center;
+      flex-direction: column;
+
+      &__button {
+        font-size: .75rem;
+      }
+    }
   }
   .alert {
     width: 30%;

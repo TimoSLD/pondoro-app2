@@ -18,68 +18,6 @@ body {
   width: 100%;
 }
 
-@media only screen and (max-width: 64rem) {
-  .timer__display {
-    height: 20rem;
-    width: 20rem;
-  }
-}
-@media only screen and (max-width: 48rem) {
-  .timer {
-    width: 80%;
-  }
-  .timer__display {
-    height: 18.75rem;
-    width: 18.75rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-}
-@media only screen and (max-width: 30rem) {
-  .timer {
-    height: 50%;
-    width: 60%;
-  }
-  .timer__display {
-    font-size: 4rem;
-    height: 12.5rem;
-    width: 12.5rem;
-  }
-  .button-container {
-    margin-top: 1.25rem;
-  }
-  .button-container__button {
-    font-size: 0.19rem;
-  }
-  .alert {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 20rem) {
-  .timer {
-    height: 70%;
-    width: 60%;
-  }
-  .timer__display {
-    height: 10rem;
-    width: 10rem;
-  }
-  .button-container {
-    align-items: center;
-    flex-direction: column;
-    margin: 0 0.25rem 1rem;
-  }
-  .button-container__button {
-    font-size: 0.75rem;
-  }
-  .alert {
-    width: 30%;
-  }
-}
 .timer {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.6);
@@ -120,14 +58,14 @@ body {
   background-color: black;
   border-radius: 0.325rem;
   box-shadow: 0 0 0.75rem #959595;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.1rem;
   margin-left: 1.25rem;
   padding: 0.5rem 1rem;
 }
 .timer__button-container__button:hover {
   background-color: #333;
-  transform: translate(0, -0.18px);
+  transform: translate(0, -0.18rem);
 }
 
 .alert {
@@ -145,6 +83,69 @@ body {
 }
 .alert--hide {
   display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .timer__display {
+    height: 18rem;
+    width: 18rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .timer {
+    width: 80%;
+  }
+  .timer__display {
+    height: 17rem;
+    width: 17rem;
+  }
+  .timer__button-container {
+    margin-top: 1.25rem;
+  }
+  .timer__button-container__button {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .timer {
+    height: 50%;
+    width: 60%;
+  }
+  .timer__display {
+    font-size: 4rem;
+    height: 12.5rem;
+    width: 12.5rem;
+  }
+  .timer__button-container {
+    margin-top: 3.25rem;
+  }
+  .timer__button-container__button {
+    font-size: 0.19rem;
+  }
+  .alert {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .timer {
+    height: 60%;
+    width: 50%;
+  }
+  .timer__display {
+    height: 8rem;
+    width: 8rem;
+    font-size: 3rem;
+  }
+  .timer__button-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .timer__button-container__button {
+    font-size: 0.75rem;
+  }
+  .alert {
+    width: 30%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
