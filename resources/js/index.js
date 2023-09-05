@@ -1,59 +1,62 @@
-const pomodoro = document.getElementById('pomodoro-app')
+const pomodoro = document.getElementById('pomodoro-app');
 
 /**
- * What the function does.
+ * Creates a new HTML element with specified classes, content, and event listener.
  *
- * @param {String} element
- * @param {Array<String>} elementClasses
- * @param {HTMLElement} parent
- * @param {String} content
- * @param {Function} event
+ * @param {String} element - The type of HTML element to create.
+ * @param {Array<String>} elementClasses - An array of CSS classes to add to the element.
+ * @param {HTMLElement} parent - The parent element to append the new element to (optional).
+ * @param {String} content - The inner content of the new element (optional).
+ * @param {Function} event - The event listener function for the new element (optional).
  *
- * @returns {HTMLElement}
+ * @returns {HTMLElement} - The newly created HTML element.
  */
 function createElement(element, elementClasses, parent = null, content = null, event = null) {
-    const newElement = document.createElement(element)
+    const newElement = document.createElement(element);
 
     for (const elementClass of elementClasses) {
-        newElement.classList.add(elementClass)
+        newElement.classList.add(elementClass);
     }
 
-    if (content) newElement.innerHTML = content
+    if (content) newElement.innerHTML = content;
 
-    if (parent) parent.append(newElement)
+    if (parent) parent.append(newElement);
 
-    newElement.addEventListener('click', event)
+    newElement.addEventListener('click', event);
 
-    return newElement
+    return newElement;
 }
 
 const timerElement = createElement('div', ['timer'], pomodoro);
-const timerDisplay = createElement('div', ['timer__display'], timerElement, convertTimeToFormattedString(2 * 60))
-const buttonContainer = createElement('div', ['button-container'], pomodoro);
-const alertElement = createElement('div', ['alert'], pomodoro);
+const timerDisplay = createElement('div', ['timer__display'], timerElement, convertTimeToFormattedString(2 * 60));
+const buttonContainer = createElement('div', ['button-container'], timerElement);
+const alertElement = createElement('div', ['alert', 'alert--hide'], pomodoro);
 const alertTitle = createElement('h2', ['alert__title'], alertElement, "Time is up!");
 const alertText = createElement('span', ['alert__text'], alertElement, "Take a break and relax.");
 
-const startButton = createElement('button', ['button-container__button'], buttonContainer, "start", startButtonAction);
-const restartButton = createElement('button', ['button-container__button'], buttonContainer, "restart", restartButtonAction);
-const plusOneMinuteButton = createElement('button', ['button-container__button'], buttonContainer, "+1 minute", addOneMinuteAction);
-const plusTenMinutesButton = createElement('button', ['button-container__button'], buttonContainer, "+10 minutes", addTenMinutesAction);
+const startButton = createElement('button', ['timer__button-container__button'], buttonContainer, "start", startButtonAction);
+const restartButton = createElement('button', ['timer__button-container__button'], buttonContainer, "restart", restartButtonAction);
+const plusOneMinuteButton = createElement('button', ['timer__button-container__button'], buttonContainer, "+1 minute", addOneMinuteAction);
+const plusTenMinutesButton = createElement('button', ['timer__button-container__button'], buttonContainer, "+10 minutes", addTenMinutesAction);
 
 let totalSeconds = 25 * 60;
 let timerInterval;
 let breakCounter = 0;
 let breakTime = 5 * 60;
+let alertCooldown = breakTime-5;
 let breakInterval;
 let inBreak = false;
 let isPaused = false;
 
-const breakCounterElement = createElement('span', ['timer__counter'], timerElement, "Break counter: " + breakCounter)
+const breakCounterElement = createElement('span', ['timer__counter'], timerElement, "Break counter: " + breakCounter);
 
 /**
  * Handles the "Start/Pause/Resume" button click.
  * If the timer is not running and not paused, it starts the timer.
  * If the timer is running and not paused, it pauses the timer.
  * If the timer is not running and is paused, it resumes the timer.
+ *
+ * @returns {void}
  */
 function startButtonAction() {
     if (!timerInterval && !isPaused) {
@@ -79,6 +82,8 @@ function startButtonAction() {
  * If the totalSeconds reach 0, it clears the timerInterval, increments the break counter,
  * updates the break time and display, shows an alert, and starts a break interval.
  * If the timer is still running, it decreases totalSeconds and updates the current time display.
+ *
+ * @returns {void}
  */
 function updateTimerDisplay() {
     if (totalSeconds <= 0) {
@@ -100,10 +105,7 @@ function updateTimerDisplay() {
         currentBreakTime();
 
         // Show an alert for a brief period
-        alertElement.style.display = "block";
-        setTimeout(() => {
-            alertElement.style.display = "none";
-        }, 3000);
+        displayAlert(true)
 
         // Enter the break mode and start break interval
         inBreak = true;
@@ -114,6 +116,11 @@ function updateTimerDisplay() {
         totalSeconds = totalSeconds -= 1;
         currentTime();
     }
+}
+
+function displayAlert(display) {
+    console.log('cstatutus change')
+    display ? alertElement.classList.remove('alert--hide') : alertElement.classList.add('alert--hide')
 }
 
 /**
@@ -141,6 +148,8 @@ function padNumber(number) {
  * If the breakTime reaches 0, it clears the breakInterval, resets breakTime, exits break mode,
  * enables the "Start" button, and updates its text to "Start."
  * If the break is still ongoing, it decreases breakTime and updates the break time and current time displays in startButton.
+ *
+ * @returns {void}
  */
 function updateBreakTimer() {
     // Disable the "Start" button during the break
@@ -157,6 +166,9 @@ function updateBreakTimer() {
         startButton.disabled = false;
         startButton.textContent = "Start";
     } else {
+        if (alertCooldown === breakTime) {
+            displayAlert(false)
+        }
         // Break is ongoing, decrease breakTime and update displays
         breakTime = breakTime -= 1;
         currentBreakTime();
@@ -167,6 +179,8 @@ function updateBreakTimer() {
 /**
  * Restarts the timer by clearing the interval, resetting totalSeconds to 0,
  * updating the "Start" button text, and displaying the initial time.
+ *
+ * @returns {void}
  */
 function restartButtonAction() {
     // Clear the timer interval, reset totalSeconds, and update button text
@@ -181,23 +195,27 @@ function restartButtonAction() {
 
 /**
  * Adds one minute to the timer's total duration and updates the timer display.
+ *
+ * @returns {void}
  */
 function addOneMinuteAction() {
     // Increase the total duration by 60 seconds (1 minute)
     totalSeconds = totalSeconds += 60;
 
-    // Display the initial time on the timer
+    // Display the updated time on the timer
     currentTime();
 }
 
 /**
  * Adds 10 minutes to the timer's total duration and updates the timer display.
+ *
+ * @returns {void}
  */
 function addTenMinutesAction() {
     // Increase the total duration by 10 times 60 seconds (10 minutes)
     totalSeconds = totalSeconds += 10 * 60;
 
-    // Display the initial time on the timer
+    // Display the updated time on the timer
     currentTime();
 }
 
@@ -205,6 +223,8 @@ function addTenMinutesAction() {
  * Calculates and updates the current time displayed in the timer.
  * It calculates minutes and seconds from the total seconds and uses the
  * `convertTimeToFormattedString` function to format the time as "MM:SS".
+ *
+ * @returns {void}
  */
 function currentTime() {
     // Calculate minutes and seconds from totalSeconds
@@ -221,6 +241,8 @@ function currentTime() {
  * Calculates and updates the current break time displayed in the timer.
  * It calculates minutes and seconds from the breakTime and uses the
  * `convertTimeToFormattedString` function to format the time as "MM:SS".
+ *
+ * @returns {void}
  */
 function currentBreakTime() {
     // To format the break time as "MM:SS"
@@ -231,7 +253,7 @@ function currentBreakTime() {
 
     // Set the alert title and text
     alertTitle.textContent = "Time is up!";
-    alertText.textContent = "Take a break and start again after: " + formattedBreakTime + " mins";
+    alertText.textContent = `Take a break and start again after: ${formattedBreakTime} mins`;
 }
 
 // Initialize the timer display
