@@ -22,6 +22,8 @@ function createElement(element, elementClasses, parent = null, content = null, e
 
     if (parent) parent.append(newElement)
 
+    newElement.addEventListener('click', event)
+
     return newElement
 }
 
@@ -35,7 +37,7 @@ const alertText = createElement('span', ['alert__text'], alertElement, "Take a b
 const startButton = createElement('button', ['button-container__button'], buttonContainer, "start", startButtonAction);
 const restartButton = createElement('button', ['button-container__button'], buttonContainer, "restart", restartButtonAction);
 const plusOneMinuteButton = createElement('button', ['button-container__button'], buttonContainer, "+1 minute", addOneMinuteAction);
-const plusTenMinutesButton = createElement('button', ['button-container__button'], buttonContainer, "+1 minute", addTenMinutesAction);
+const plusTenMinutesButton = createElement('button', ['button-container__button'], buttonContainer, "+10 minutes", addTenMinutesAction);
 
 let totalSeconds = 25 * 60;
 let timerInterval;

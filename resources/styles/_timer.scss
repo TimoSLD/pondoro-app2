@@ -4,6 +4,7 @@
   display: flex;
   height: 31.35rem;
   justify-content: center;
+  position: relative;
   padding: .625rem;
   width: 50rem;
 
@@ -18,5 +19,11 @@
     justify-content: center;
     text-align: center;
     width: 18.75rem;
+  }
+
+  &__counter {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
   }
 }

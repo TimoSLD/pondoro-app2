@@ -14,7 +14,10 @@ body {
   display: flex;
   height: 100vh;
   justify-content: center;
+  position: relative;
   width: 100%;
+
+
 }
 
 @import "styles/responsive";
